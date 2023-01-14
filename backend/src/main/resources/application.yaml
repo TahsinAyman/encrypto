@@ -1,0 +1,14 @@
+server:
+  address: localhost
+  port: 8000
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost:2222/encrypto
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
