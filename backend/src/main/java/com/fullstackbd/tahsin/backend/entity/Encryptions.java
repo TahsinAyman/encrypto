@@ -8,14 +8,18 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class Encryptions {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @Column(name = "id")
     private Long id;
     @Column(name = "encrypted_text", nullable = false)
     private String encryptedText;
+
+    @ManyToOne
+    @JoinColumn(name = "public_keys_id")
+    private PublicKeys publicKeys;
 }
